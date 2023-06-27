@@ -1,0 +1,8 @@
+prototype(Kleisli.SharingButtons:Component.Icon.Facebook) < prototype(Neos.Fusion:Component){
+
+    renderer = Kleisli.SharingButtons:Component.Svg {
+        src = 'resource://Kleisli.SharingButtons/Private/Images/fa-facebook-f.svg'
+        fill = '#ffffff'
+        stroke = 'none'
+    }
+}

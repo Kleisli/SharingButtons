@@ -1,0 +1,29 @@
+prototype(Kleisli.SharingButtons:Component.Button) < prototype(Neos.Fusion:Component){
+
+    linkToShare = Neos.Neos:NodeUri {
+        @if.neosCms = ${documentNode}
+        absolute = true
+        node = ${documentNode}
+    }
+
+    class = ''
+    icon = ''
+    text = ''
+
+    renderer = Neos.Fusion:Tag {
+        attributes.class = ${"k-sharingbutton " + props.class}
+        content = Neos.Fusion:Tag {
+            tagName = 'a'
+            content = Neos.Fusion:Join {
+                icon = Neos.Fusion:Tag {
+                    attributes {
+                        aria-hidden = "true"
+                        class = "k-sharingbutton__icon k-sharingbutton__icon--solid"
+                    }
+                    content = ${props.icon}
+                }
+                text = ${props.text}
+            }
+        }
+    }
+}

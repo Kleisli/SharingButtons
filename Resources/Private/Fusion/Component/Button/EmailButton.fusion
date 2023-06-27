@@ -1,0 +1,20 @@
+prototype(Kleisli.SharingButtons:Component.EmailButton) < prototype(Kleisli.SharingButtons:Component.Button){
+
+    subject = Neos.Fusion:Value {
+        @if.neosCms = ${documentNode}
+        value = ${documentNode.properties.title}
+    }
+
+    class = 'k-sharingbutton--email'
+    icon = Kleisli.SharingButtons:Component.Icon.Email
+    text = 'Per E-Mail teilen'
+
+    renderer {
+        content.attributes.href = Neos.Fusion:Join {
+            1 = 'mailto:?subject='
+            2 = ${props.subject}
+            3 = '&body=%0D%0A%0D%0A'
+            4 = ${props.linkToShare}
+        }
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "description": "",
+    "type": "neos-package",
+    "name": "kleisli/sharingbuttons",
+    "require": {
+        "neos/fusion": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kleisli\\SharingButtons\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Kleisli.SharingButtons"
+        }
+    }
+}

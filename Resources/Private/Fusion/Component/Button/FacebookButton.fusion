@@ -1,0 +1,13 @@
+prototype(Kleisli.SharingButtons:Component.FacebookButton) < prototype(Kleisli.SharingButtons:Component.Button){
+
+    class = 'k-sharingbutton--facebook'
+    icon = Kleisli.SharingButtons:Component.Icon.Facebook
+    text = 'Auf facebook teilen'
+
+    renderer  {
+        content.attributes.href = Neos.Fusion:Join {
+            1 = 'https://www.facebook.com/sharer/sharer.php?u='
+            2 = ${String.rawUrlEncode(props.linkToShare)}
+        }
+    }
+}

@@ -1,0 +1,11 @@
+prototype(Kleisli.SharingButtons:Component.Svg) < prototype(Neos.Fusion:Component) {
+    src = ''
+    fill = '#000000'
+
+    renderer = Neos.Fusion:Augmenter {
+        content = ${File.readFile(props.src)}
+        fill = ${props.fill}
+        stroke = '#ffffff'
+        stroke-width= '10'
+    }
+}

@@ -1,0 +1,13 @@
+prototype(Kleisli.SharingButtons:Component.TwitterButton) < prototype(Kleisli.SharingButtons:Component.Button){
+
+    class = 'k-sharingbutton--twitter'
+    icon = Kleisli.SharingButtons:Component.Icon.Twitter
+    text = 'Auf twitter teilen'
+
+    renderer {
+        content.attributes.href = Neos.Fusion:Join {
+            1 = 'https://twitter.com/intent/tweet?text='
+            2 = ${String.rawUrlEncode(props.linkToShare)}
+        }
+    }
+}
